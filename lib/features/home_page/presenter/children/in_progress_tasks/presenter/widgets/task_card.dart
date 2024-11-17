@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TaskCard extends StatelessWidget {
@@ -17,6 +18,10 @@ class TaskCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        side: BorderSide(width: 2, color: Colors.black),
+        borderRadius: BorderRadius.circular(10),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -55,18 +60,28 @@ class TaskCard extends StatelessWidget {
               children: [
                 // Aquí está la corrección principal
                 SizedBox(
-                  height: 24, // Altura fija para los avatares
+                  // height: 24,
                   child: Row(
                     children: List.generate(
                       memberCount,
                       (index) => Padding(
-                        padding: EdgeInsets.only(left:2.0),
-                        child: CircleAvatar(
-                          radius: 12,
-                          backgroundColor: Colors.grey[(index + 1) * 100],
-                          child: Text(
-                            String.fromCharCode(65 + index),
-                            style: const TextStyle(fontSize: 12),
+                        padding: EdgeInsets.only(left: 2.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.all(Radius.circular(100)),
+                            border: Border.all(color: Colors.black,width: 1)
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: CircleAvatar(
+                              radius: 12,
+                              backgroundColor: Colors.grey[(index + 1) * 100],
+                              child: Text(
+                                String.fromCharCode(65 + index),
+                                style: const TextStyle(fontSize: 12),
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -74,16 +89,28 @@ class TaskCard extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
-                    color: Colors.amber[100],
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Text(
-                    '#$memberCount',
-                    style: TextStyle(
-                      color: Colors.amber[900],
-                    ),
+                      color: Colors.amber[100],
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.black, width: 2)),
+                  child: Row(
+                    children: [
+                      Icon(
+                        CupertinoIcons.paperclip,
+                        size: 14,
+                      ),
+                      SizedBox(
+                        width: 2,
+                      ),
+                      Text(
+                        '$memberCount',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
