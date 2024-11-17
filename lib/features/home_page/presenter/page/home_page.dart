@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:todo_app/features/add_task/presenter/add_task.dart';
+import 'package:todo_app/features/add_task/presenter/add_task_bottom_sheet.dart';
 import 'package:todo_app/features/home_page/presenter/bloc/home_bloc.dart';
 import 'package:todo_app/features/home_page/presenter/page/widgets/tab_views.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -169,7 +169,7 @@ class _Page extends StatelessWidget {
                   builder: (context) {
                     return BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-                      child: AddTaskDialog(),
+                      child: const AddTaskBottomSheet(),
                     );
                   });
             },

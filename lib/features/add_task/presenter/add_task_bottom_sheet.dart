@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/features/home_page/presenter/bloc/home_bloc.dart';
 
-class AddTaskDialog extends StatelessWidget {
-  const AddTaskDialog({super.key, });
+class AddTaskBottomSheet extends StatelessWidget {
+  const AddTaskBottomSheet({super.key, });
 
   @override
   Widget build(BuildContext context) {
 
     return FractionallySizedBox(
-      heightFactor: 0.8,
+      heightFactor: 0.75,
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
@@ -17,7 +17,8 @@ class AddTaskDialog extends StatelessWidget {
           border: Border.all(color: Colors.black, width: 2),
           borderRadius: BorderRadius.circular(16),
         ),
-        child: ListView(
+        child: Column(
+            
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,6 +50,7 @@ class AddTaskDialog extends StatelessWidget {
                           child: SearchBar(
                             leading: Icon(Icons.search),
                             elevation: WidgetStatePropertyAll(0),
+                            hintText: 'Select lists',
                             backgroundColor: WidgetStatePropertyAll(Colors.white),
                             side: WidgetStatePropertyAll<BorderSide>(BorderSide(color: Colors.black,width: 1))
                           ),
@@ -129,50 +131,53 @@ class AddTaskDialog extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.calendar_today),
-                        onPressed: () {},
-                      ),
-                      IconButton(
-                        icon: const Icon(Icons.timer),
-                        onPressed: () {},
-                      ),
-                      IconButton(
-                        icon: const Icon(Icons.flag),
-                        onPressed: () {},
-                      ),
-                      IconButton(
-                        icon: const Icon(Icons.view_agenda),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 24,
-                        vertical: 12,
-                      ),
+              const Spacer(),
+              Container(
+                alignment: Alignment.bottomCenter,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: const Icon(Icons.calendar_today),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.timer),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.flag),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.view_agenda),
+                          onPressed: () {},
+                        ),
+                      ],
                     ),
-                    onPressed: () {
-                      context.read<HomeBloc>().add(
-                            const CreateTaskRequestedEvent(
-                              title: '',
-                              description: '',
-                              list: '',
-                            ),
-                          );
-                    },
-                    child: const Text('Create Task'),
-                  ),
-                ],
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 24,
+                          vertical: 12,
+                        ),
+                      ),
+                      onPressed: () {
+                        context.read<HomeBloc>().add(
+                              const CreateTaskRequestedEvent(
+                                title: '',
+                                description: '',
+                                list: '',
+                              ),
+                            );
+                      },
+                      child: const Text('Create Task'),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
