@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/features/home_page/presenter/children/in_progress_tasks/presenter/in_progress_tab.dart';
+import 'package:todo_app/features/schedule_page/presenter/page/schedule_page.dart';
 
 class TabViews extends StatelessWidget {
   const TabViews({
@@ -13,8 +14,7 @@ class TabViews extends StatelessWidget {
         children: [
           Center(child: Text("page1"),),
           InProgressTab(),
-          Center(child: Text("page3"),),
-//          FavoriteRestaurantsTab(),
+          SchedulePage()
         ],
       ),
     );

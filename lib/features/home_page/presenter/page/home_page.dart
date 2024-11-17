@@ -30,15 +30,18 @@ class _Page extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: const Text('Boards'),
+            centerTitle: true,
             actions: [
               IconButton(
-                icon: const Icon(Icons.refresh),
+                icon: const Icon(Icons.notifications_outlined),
                 onPressed: () {},
               ),
               const CircleAvatar(
-                backgroundColor: Colors.grey,
+                radius: 16,
                 child: Text('A'),
+                backgroundColor: Colors.grey,
               ),
+              SizedBox(width: 20,)
             ],
           ),
           body: DefaultTabController(
