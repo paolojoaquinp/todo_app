@@ -43,10 +43,10 @@ class AddTaskBottomSheet extends StatelessWidget {
                 children: [
                   const Text('In'),
                   const SizedBox(width: 8),
-                  Expanded(
+                  const Expanded(
                     child: Row(
                       children: [
-                        const Expanded(
+                        Expanded(
                           child: SearchBar(
                             leading: Icon(Icons.search),
                             elevation: WidgetStatePropertyAll(0),

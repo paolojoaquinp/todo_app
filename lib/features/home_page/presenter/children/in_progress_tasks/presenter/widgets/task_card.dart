@@ -19,7 +19,7 @@ class TaskCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-        side: BorderSide(width: 2, color: Colors.black),
+        side: const BorderSide(width: 2, color: Colors.black),
         borderRadius: BorderRadius.circular(10),
       ),
       color: Colors.white,
@@ -66,11 +66,11 @@ class TaskCard extends StatelessWidget {
                     children: List.generate(
                       memberCount,
                       (index) => Padding(
-                        padding: EdgeInsets.only(left: 2.0),
+                        padding: const EdgeInsets.only(left: 2.0),
                         child: Container(
                           decoration: BoxDecoration(
                           color: Colors.transparent,
-                          borderRadius: BorderRadius.all(Radius.circular(100)),
+                          borderRadius: const BorderRadius.all(Radius.circular(100)),
                             border: Border.all(color: Colors.black,width: 1)
                           ),
                           child: Padding(
@@ -98,16 +98,16 @@ class TaskCard extends StatelessWidget {
                       border: Border.all(color: Colors.black, width: 2)),
                   child: Row(
                     children: [
-                      Icon(
+                      const Icon(
                         CupertinoIcons.paperclip,
                         size: 14,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 2,
                       ),
                       Text(
                         '$memberCount',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),

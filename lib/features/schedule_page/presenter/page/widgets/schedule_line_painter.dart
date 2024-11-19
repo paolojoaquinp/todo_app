@@ -10,8 +10,8 @@ class ScheduleLinePainter extends CustomPainter {
       ..strokeWidth = 2
       ..style = PaintingStyle.stroke;
 
-    final dashWidth = 10.0;
-    final dashSpace = 5.0;
+    const dashWidth = 10.0;
+    const dashSpace = 5.0;
     double startX = 0;
 
     while (startX < size.width) {

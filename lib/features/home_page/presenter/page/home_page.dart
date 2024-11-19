@@ -20,9 +20,7 @@ class HomePage extends StatelessWidget {
 }
 
 class _Page extends StatelessWidget {
-  const _Page({
-    super.key,
-  });
+  const _Page();
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +35,14 @@ class _Page extends StatelessWidget {
             actions: [
               IconButton(
                 icon: const Icon(Icons.calendar_month),
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => SchedulePage())),
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SchedulePage())),
               ),
               const CircleAvatar(
                 radius: 16,
-                child: Text('A'),
                 backgroundColor: Colors.grey,
+                child: Text('A'),
               ),
-              SizedBox(width: 20,)
+              const SizedBox(width: 20,)
             ],
           ),
           body: DefaultTabController(
@@ -68,9 +66,9 @@ class _Page extends StatelessWidget {
                                 border:
                                     Border.all(color: Colors.black, width: 1),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
+                                    const BorderRadius.all(Radius.circular(100)),
                               ),
-                              child: CircleAvatar(
+                              child: const CircleAvatar(
                                 radius: 12,
                                 child: Text(
                                   '0',
@@ -90,7 +88,7 @@ class _Page extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               const Text('In Progress'),
-                              SizedBox(
+                              const SizedBox(
                                 width: 2.5,
                               ),
                               Container(
@@ -98,9 +96,9 @@ class _Page extends StatelessWidget {
                                   border:
                                       Border.all(color: Colors.black, width: 1),
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(100)),
+                                      const BorderRadius.all(Radius.circular(100)),
                                 ),
-                                child: CircleAvatar(
+                                child: const CircleAvatar(
                                   backgroundColor: Colors.orange,
                                   radius: 12,
                                   child: Text(
@@ -122,7 +120,7 @@ class _Page extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             const Text('Done'),
-                            SizedBox(
+                            const SizedBox(
                               width: 2.5,
                             ),
                             Container(
@@ -130,9 +128,9 @@ class _Page extends StatelessWidget {
                                 border:
                                     Border.all(color: Colors.black, width: 1),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
+                                    const BorderRadius.all(Radius.circular(100)),
                               ),
-                              child: CircleAvatar(
+                              child: const CircleAvatar(
                                 backgroundColor: Colors.green,
                                 radius: 12,
                                 child: Text(
@@ -151,7 +149,7 @@ class _Page extends StatelessWidget {
                     ],
                   ),
                 ),
-                TabViews(),
+                const TabViews(),
               ],
             ),
           ),
@@ -159,7 +157,7 @@ class _Page extends StatelessWidget {
               FloatingActionButtonLocation.centerFloat,
           floatingActionButton: FloatingActionButton(
             shape: RoundedRectangleBorder(
-              side: BorderSide(width: 2, color: Colors.black),
+              side: const BorderSide(width: 2, color: Colors.black),
               borderRadius: BorderRadius.circular(100),
             ),
             backgroundColor: Colors.green,

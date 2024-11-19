@@ -15,7 +15,7 @@ class SchedulePage extends StatelessWidget {
       create: (context) => ScheduleBloc(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Schedule'),
+          title: const Text('Schedule'),
           backgroundColor: Colors.white,
         ),
         backgroundColor: const Color(0xFFF5F5F8),
