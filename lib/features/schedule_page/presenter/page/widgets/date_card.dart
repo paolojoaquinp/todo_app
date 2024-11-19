@@ -20,7 +20,7 @@ class DateCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: isSelected ? const Color(0xFFFFF8E8) : Colors.white,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.grey.shade300),
+        border: Border.all(color: Colors.black, width: 2),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

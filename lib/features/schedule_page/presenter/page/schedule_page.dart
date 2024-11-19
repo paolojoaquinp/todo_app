@@ -14,6 +14,10 @@ class SchedulePage extends StatelessWidget {
     return BlocProvider<ScheduleBloc>(
       create: (context) => ScheduleBloc(),
       child: Scaffold(
+        appBar: AppBar(
+          title: Text('Schedule'),
+          backgroundColor: Colors.white,
+        ),
         backgroundColor: const Color(0xFFF5F5F8),
         body: SafeArea(
           child: Padding(
@@ -57,40 +61,38 @@ class SchedulePage extends StatelessWidget {
                     },
                   ),
                 ),
-                const SizedBox(height: 20),
-                // Schedule List
                 Expanded(
-                  child: Stack(
-                    children: [
-                      ListView(
-                        children: const [
-                          ScheduleCard(
-                            title: 'Research cashback',
-                            subtitle: 'Analytic consument behaviour',
-                            time: '11:00',
-                            backgroundColor: Color(0xFFFFF8E8),
-                            participants: 3,
-                          ),
-                          ScheduleCard(
-                            title: 'Customer ads Meetings',
-                            subtitle: '14:00 - 15:30',
-                            time: '14:00',
-                            backgroundColor: Color(0xFFE8F8FF),
-                            participants: 2,
-                            hasVideoCall: true,
-                          ),
-                          ScheduleCard(
-                            title: 'Update Report Sales',
-                            subtitle: '17:00 - 17:30',
-                            time: '17:00',
-                            backgroundColor: Color(0xFFF8E8FF),
-                            participants: 1,
-                          ),
-                        ],
+                  child: ListView(
+                    children:  const [
+                      ScheduleCard(
+                        title: 'Research cashback',
+                        subtitle: 'Analytic consument behaviour',
+                        time: '11:00',
+                        backgroundColor: Color(0xFFFFF8E8),
+                        participants: 3,
                       ),
                       CustomPaint(
-                        size: Size.infinite,
+                        size:Size(double.infinity, 2),
                         painter: ScheduleLinePainter(),
+                      ),
+                      ScheduleCard(
+                        title: 'Customer ads Meetings',
+                        subtitle: '14:00 - 15:30',
+                        time: '14:00',
+                        backgroundColor: Color(0xFFE8F8FF),
+                        participants: 2,
+                        hasVideoCall: true,
+                      ),
+                      CustomPaint(
+                        size:Size(double.infinity, 2),
+                        painter: ScheduleLinePainter(),
+                      ),
+                      ScheduleCard(
+                        title: 'Update Report Sales',
+                        subtitle: '17:00 - 17:30',
+                        time: '17:00',
+                        backgroundColor: Color(0xFFF8E8FF),
+                        participants: 1,
                       ),
                     ],
                   ),

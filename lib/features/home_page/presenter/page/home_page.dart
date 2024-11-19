@@ -5,6 +5,7 @@ import 'package:todo_app/features/add_task/presenter/add_task_bottom_sheet.dart'
 import 'package:todo_app/features/home_page/presenter/bloc/home_bloc.dart';
 import 'package:todo_app/features/home_page/presenter/page/widgets/tab_views.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_app/features/schedule_page/presenter/page/schedule_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -28,13 +29,15 @@ class _Page extends StatelessWidget {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
         return Scaffold(
+          backgroundColor: Colors.white,
           appBar: AppBar(
             title: const Text('Boards'),
+            backgroundColor: Colors.white,
             centerTitle: true,
             actions: [
               IconButton(
-                icon: const Icon(Icons.notifications_outlined),
-                onPressed: () {},
+                icon: const Icon(Icons.calendar_month),
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => SchedulePage())),
               ),
               const CircleAvatar(
                 radius: 16,
@@ -49,6 +52,7 @@ class _Page extends StatelessWidget {
             child: Column(
               children: [
                 Material(
+                  color: Colors.white,
                   child: TabBar(
                     tabs: [
                       Tab(

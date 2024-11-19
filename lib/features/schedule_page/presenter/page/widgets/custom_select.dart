@@ -19,7 +19,7 @@ class CustomSelect extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.grey.shade300),
+        border: Border.all(color: Colors.black, width: 2),
       ),
       child: DropdownButton<String>(
         value: value,

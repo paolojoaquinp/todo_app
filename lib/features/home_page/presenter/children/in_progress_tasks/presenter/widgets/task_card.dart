@@ -22,6 +22,7 @@ class TaskCard extends StatelessWidget {
         side: BorderSide(width: 2, color: Colors.black),
         borderRadius: BorderRadius.circular(10),
       ),
+      color: Colors.white,
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(

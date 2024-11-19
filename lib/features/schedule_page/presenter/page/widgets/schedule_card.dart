@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class ScheduleCard extends StatelessWidget {
   final String title;
   final String subtitle;
@@ -21,7 +20,7 @@ class ScheduleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 16),
+      margin: const EdgeInsets.only(bottom: 16, top: 16),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -30,7 +29,7 @@ class ScheduleCard extends StatelessWidget {
             child: Text(
               time,
               style: const TextStyle(
-                color: Colors.grey,
+                color: Colors.black,
                 fontSize: 14,
               ),
             ),
@@ -41,6 +40,7 @@ class ScheduleCard extends StatelessWidget {
               decoration: BoxDecoration(
                 color: backgroundColor,
                 borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.black, width: 2)
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
