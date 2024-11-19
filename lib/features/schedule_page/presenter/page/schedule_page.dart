@@ -4,6 +4,7 @@ import 'package:todo_app/features/schedule_page/presenter/bloc/schedule_bloc.dar
 import 'package:todo_app/features/schedule_page/presenter/page/widgets/custom_select.dart';
 import 'package:todo_app/features/schedule_page/presenter/page/widgets/date_card.dart';
 import 'package:todo_app/features/schedule_page/presenter/page/widgets/schedule_card.dart';
+import 'package:todo_app/features/schedule_page/presenter/page/widgets/schedule_line_painter.dart';
 
 class SchedulePage extends StatelessWidget {
   const SchedulePage({super.key});
@@ -59,29 +60,37 @@ class SchedulePage extends StatelessWidget {
                 const SizedBox(height: 20),
                 // Schedule List
                 Expanded(
-                  child: ListView(
-                    children: const [
-                      ScheduleCard(
-                        title: 'Research cashback',
-                        subtitle: 'Analytic consument behaviour',
-                        time: '11:00',
-                        backgroundColor: Color(0xFFFFF8E8),
-                        participants: 3,
+                  child: Stack(
+                    children: [
+                      ListView(
+                        children: const [
+                          ScheduleCard(
+                            title: 'Research cashback',
+                            subtitle: 'Analytic consument behaviour',
+                            time: '11:00',
+                            backgroundColor: Color(0xFFFFF8E8),
+                            participants: 3,
+                          ),
+                          ScheduleCard(
+                            title: 'Customer ads Meetings',
+                            subtitle: '14:00 - 15:30',
+                            time: '14:00',
+                            backgroundColor: Color(0xFFE8F8FF),
+                            participants: 2,
+                            hasVideoCall: true,
+                          ),
+                          ScheduleCard(
+                            title: 'Update Report Sales',
+                            subtitle: '17:00 - 17:30',
+                            time: '17:00',
+                            backgroundColor: Color(0xFFF8E8FF),
+                            participants: 1,
+                          ),
+                        ],
                       ),
-                      ScheduleCard(
-                        title: 'Customer ads Meetings',
-                        subtitle: '14:00 - 15:30',
-                        time: '14:00',
-                        backgroundColor: Color(0xFFE8F8FF),
-                        participants: 2,
-                        hasVideoCall: true,
-                      ),
-                      ScheduleCard(
-                        title: 'Update Report Sales',
-                        subtitle: '17:00 - 17:30',
-                        time: '17:00',
-                        backgroundColor: Color(0xFFF8E8FF),
-                        participants: 1,
+                      CustomPaint(
+                        size: Size.infinite,
+                        painter: ScheduleLinePainter(),
                       ),
                     ],
                   ),
